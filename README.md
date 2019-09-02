@@ -10,10 +10,21 @@
   
 ## 2、导入依赖<br>
   dependencies {<br>
-	        implementation 'com.github.android-work:DouyinAnimator_AndroidX:v1.0.1'
+	        implementation 'com.github.android-work:CircleView:v1.0.1'
 	}<br>
   
   ### 相关的动画调用方法<br>
+   ### 布局文件
+   <com.ancroid.work.circleview.CircleImageView
+        android:layout_marginTop="50dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        app:resBg="@drawable/ic_default"<-- 如果未指定图片则使用默认的图片!-->
+        android:id="@+id/circleview"/>
+   ### 相关方法
+   设置圆形头像的轮廓宽度：setStrokeWidth(float strokeWidth)默认4像素
+   设置轮廓颜色：setColor(int color)不需要可以设置为透明
+   更换图片：setBackground(Bitmap bitmap)未设置会使用系统默认的图片
   
   
   ### 图片描述<br>
