@@ -10,7 +10,7 @@
   
 ## 2、导入依赖<br>
   dependencies {<br>
-	        implementation 'com.github.android-work:CircleView:v1.0.1'
+	        implementation 'com.github.android-work:CircleView:v1.0.2'
 	}<br>
   
   ### 相关的动画调用方法<br>
@@ -25,6 +25,22 @@
    设置圆形头像的轮廓宽度：setStrokeWidth(float strokeWidth)默认4像素<br>
    设置轮廓颜色：setColor(int color)不需要可以设置为透明<br>
    更换图片：setBackground(Bitmap bitmap)未设置会使用系统默认的图片<br>
+   
+   ### 相关的动画调用方法<br>
+   ### 布局文件
+   <com.ancroid.work.circleview.DrawGeZiView <br>
+        android:layout_marginLeft="5dp" <br>
+        android:layout_marginRight="5dp" <br>
+        android:layout_width="wrap_content" <br>
+        android:layout_height="wrap_content" <br>
+        android:id="@+id/gezi"/> <br>
+   ### 相关方法
+   设置格子线条颜色：setGeZiLinecolor(int color) <br>
+   设置填充格子的颜色：setFillColor(int color) <br>
+   设置格子线条宽度：setGeZiStroke(int size) <br>
+   设置格子的宽度：setGeZiWidth(int geZiWidth) <br>
+   设置总共需要画出多少格子：setGeZiCount(int geZiCount) <br>
+   设置需要填充的格子:setFillCount(int fillCount) <br>
   
   
   ### 图片描述<br>
