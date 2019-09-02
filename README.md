@@ -28,6 +28,6 @@
   
   
   ### 图片描述<br>
-   https://github.com/android-work/CircleView/blob/master/IMAGE/53661197-D9C3-4ca0-908F-676BC9ABF6B3.png
+   https://github.com/android-work/CircleView/blob/master/IMAGE/340A7B3E-5209-4e80-B2E3-644DC8392476.png
     
-   ![图片描述](https://github.com/android-work/CircleView/blob/master/IMAGE/53661197-D9C3-4ca0-908F-676BC9ABF6B3.png)
+   ![图片描述](https://github.com/android-work/CircleView/blob/master/IMAGE/340A7B3E-5209-4e80-B2E3-644DC8392476.png)
