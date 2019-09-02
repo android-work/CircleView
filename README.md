@@ -13,7 +13,7 @@
 	        implementation 'com.github.android-work:CircleView:v1.0.2'
 	}<br>
   
-  ### 相关的动画调用方法<br>
+  ### 圆形图片控件<br>
    ### 布局文件
    <com.ancroid.work.circleview.CircleImageView<br>
         android:layout_marginTop="50dp"<br>
@@ -26,7 +26,7 @@
    设置轮廓颜色：setColor(int color)不需要可以设置为透明<br>
    更换图片：setBackground(Bitmap bitmap)未设置会使用系统默认的图片<br>
    
-   ### 相关的动画调用方法<br>
+   ### 画格子控件<br>
    ### 布局文件
    <com.ancroid.work.circleview.DrawGeZiView <br>
         android:layout_marginLeft="5dp" <br>
