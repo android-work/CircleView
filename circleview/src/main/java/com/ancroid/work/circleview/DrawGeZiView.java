@@ -46,6 +46,10 @@ public class DrawGeZiView extends View {
         invalidate();
     }
 
+    public void setFillCount(int fillCount){
+        this.fillCount = fillCount;
+    }
+
     public void setFillColor(int color){
         fillPaint.setColor(color);
         invalidate();
