@@ -28,7 +28,7 @@ public class CircleImageView extends ImageView {
     private int mHeight;
     private int raido = 200;
     private Paint strokecircle;
-    private int color = Color.TRANSPARENT;
+    private int color = Color.CYAN;
     private float strokeWidth = 4;
 
     public void setStrokeWidth(float strokeWidth) {
