@@ -65,6 +65,12 @@ public class DrawGeZiView extends View {
         invalidate();
     }
 
+    public void setGeZiBg(int bgColor){
+        this.bgColor = bgColor;
+        bgPaint.setColor(bgColor);
+        invalidate();
+    }
+
     public void setGeZiCount(int geZiCount){
         this.geZiCount = geZiCount;
     }
