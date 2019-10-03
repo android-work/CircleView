@@ -25,6 +25,8 @@ public class DrawGeZiView extends View {
     private Paint bgPaint;
     private int bgColor = Color.YELLOW;
     private int geZiStroke;
+    private int line;
+    private int widthCount;
 
     public DrawGeZiView(Context context) {
         this(context,null,0);
@@ -101,17 +103,21 @@ public class DrawGeZiView extends View {
 
         mWidth = getSize(widthMeasureSpec, defaultSize);
 
-        int widthCount = mWidth / geZiWidth;
+        widthCount = mWidth / geZiWidth;
 
-        Log.e("tag","widthCount:"+widthCount);
+        Log.e("tag","widthCount:"+ widthCount);
 
         //行数
-        int line = geZiCount / widthCount;
+        line = geZiCount / widthCount;
+
+        Log.e("tag","line:"+ line);
         //余格
         remaineGezi = geZiCount % widthCount;
 
+        Log.e("tag","remaineGezi:"+remaineGezi);
+
         //控件高度
-        for (int i = 0 ; i<=line+1 ; i++){
+        for (int i = 0; i<= line +1 ; i++){
             mHeight = i * geZiWidth;
         }
 
@@ -143,34 +149,46 @@ public class DrawGeZiView extends View {
 
         int nextY = 0;
         int nextX = 0;
-        int widthCount = mWidth / geZiWidth;
         int heightCount = mHeight / geZiWidth - 1;
-        remaineGezi = mWidth % geZiWidth;
-
+        Log.e("tag","heightCount:"+heightCount);
         //画背景色
-        canvas.drawRect(0,0,widthCount * geZiWidth,heightCount * geZiWidth,bgPaint);
-        if (remaineGezi !=0 ){
-            canvas.drawRect(0,heightCount * geZiWidth,remaineGezi * geZiWidth,(heightCount + 1) * geZiWidth,bgPaint);
+        if (heightCount > 0) {
+            canvas.drawRect(0, 0, widthCount * geZiWidth, heightCount * geZiWidth, bgPaint);
+            if (remaineGezi != 0) {
+                canvas.drawRect(0, heightCount * geZiWidth, remaineGezi * geZiWidth, (heightCount + 1) * geZiWidth, bgPaint);
+            }
+        }else{
+            canvas.drawRect(0, 0, remaineGezi * geZiWidth,  geZiWidth, bgPaint);
         }
 
         //计算完整的行数
         int fillLine = fillCount / widthCount;
+        Log.e("tag","fillLine:"+fillLine);
         //不足完整一行的格子数
         int cs = fillCount % widthCount;
-        //画填充背景
-        canvas.drawRect(0,0,widthCount * geZiWidth,fillLine * geZiWidth,fillPaint);
-        if (cs!=0){
-            canvas.drawRect(0,fillLine * geZiWidth,(cs) * geZiWidth,
-                    (fillLine+1) * geZiWidth,fillPaint);
+        Log.e("tag","cs:"+cs);
+        if (fillLine > 0) {
+            //画填充背景
+            canvas.drawRect(0, 0, widthCount * geZiWidth, fillLine * geZiWidth, fillPaint);
+            if (cs != 0) {
+                canvas.drawRect(0, fillLine * geZiWidth, (cs) * geZiWidth,
+                        (fillLine + 1) * geZiWidth, fillPaint);
+            }
+        }else{
+            canvas.drawRect(0, 0, cs * geZiWidth, geZiWidth, fillPaint);
         }
 
         //行
         for (int i = 0 ; i<=heightCount + 1; i++){
-            if (i==heightCount + 1){
-                canvas.drawLine(0,nextY, remaineGezi * geZiWidth,nextY,paint);
-                break;
+            if (heightCount == 0) {
+                canvas.drawLine(0, nextY, remaineGezi * geZiWidth, nextY, paint);
+            }else {
+                if (i == heightCount + 1) {
+                    canvas.drawLine(0, nextY, remaineGezi * geZiWidth, nextY, paint);
+                    break;
+                }
+                canvas.drawLine(0, nextY, widthCount * geZiWidth, nextY, paint);
             }
-            canvas.drawLine(0,nextY,widthCount * geZiWidth,nextY,paint);
             nextY += geZiWidth;
         }
 
