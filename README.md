@@ -10,7 +10,7 @@
   
 ## 2、导入依赖<br>
   dependencies {<br>
-	        implementation 'com.github.android-work:CircleViewAndDrawGezi:v1.0.2'
+	        implementation 'com.github.android-work:CircleViewAndDrawGezi:v1.0.3'
 	}<br>
   
   ### 圆形图片控件<br>
@@ -43,6 +43,7 @@
    设置格子的宽度：setGeZiWidth(int geZiWidth) <br>
    设置总共需要画出多少格子：setGeZiCount(int geZiCount) <br>
    设置需要填充的格子:setFillCount(int fillCount) <br>
+   设置格子背景色:setGeZiBg(int bgColor) <br>
   
   
   ### 图片描述<br>
